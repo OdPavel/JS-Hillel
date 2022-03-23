@@ -2,10 +2,10 @@
 
 // task #1
 const user = {}
-user.user = 'John';
+user.name = 'John';
 user.surname = 'Smith';
-user.user = 'Pete';
-delete user.user;
+user.name = 'Pete';
+delete user.name;
 
 console.log(user);
 
