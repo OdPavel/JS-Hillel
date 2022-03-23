@@ -1,0 +1,32 @@
+.display {
+    background-color: $bgColor;
+    &__breadcrumbs {
+        display: flex;
+        padding: 0;
+    }
+    &__breadcrumbs-item {
+        margin-right: 42px;
+        display: inline-flex;
+        line-height: 18px;
+        padding: 10px 0;
+        color: $bredColor;
+    }
+    &__breadcrumbs-item--line {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 26px;
+            height: 2px;
+            background-color: $bredColor;
+            top: 50%;
+            right: -34px;
+        }
+    }
+    &__title {
+        padding-bottom: 37px;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 30px;
+    }
+}
