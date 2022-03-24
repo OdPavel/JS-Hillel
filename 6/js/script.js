@@ -9,8 +9,8 @@ Number(1 + String(1)) + 1; //12
 
 //task #2
 const numberSecontsOfHour = 60 * 60;
-let hours = +prompt('Введите количество часов', 5);
-let sumSecontsOfHours = numberSecontsOfHour * hours;
+const hours = +prompt('Введите количество часов', 5);
+const sumSecontsOfHours = numberSecontsOfHour * hours;
 alert(sumSecontsOfHours);
 
 //task #3
