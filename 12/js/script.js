@@ -38,27 +38,25 @@
 // }
 
 // #4
-// const firstNum = prompt('Введите первое число');
-// const secondNum = prompt('Введите второе число');
-// const thirdNum = prompt('Ведите третье число');
-// if(firstNum > secondNum){
-//     if(firstNum > thirdNum){
-//         alert(`Число ${firstNum} самое большое`);
-//     }else {
-//         alert(`Число ${thirdNum} самое большое`);
-//     }
-// }else if (secondNum > thirdNum){
-//     alert(`Число ${secondNum} самое большое`);
-// }else {
-//     alert(`Число ${thirdNum} самое большое`);
-// }
+const firstNum = +prompt('Введите первое число');
+const secondNum = +prompt('Введите второе число');
+const thirdNum = +prompt('Ведите третье число');
+if(firstNum > secondNum && firstNum > thirdNum){
+    alert(`Число ${firstNum} самое большое`);
+}else if(firstNum > secondNum && firstNum < thirdNum || firstNum < secondNum && secondNum < thirdNum){
+    alert(`Число ${thirdNum} самое большое`);
+}else if (firstNum < secondNum && secondNum > thirdNum){
+    alert(`Число ${secondNum} самое большое`);
+}else{
+    alert('Попробуйте еще раз');
+}
 
 // #5
-const firstSide = prompt('Введите длину первой стороны');
-const secondSide = prompt('Введите длину второй стороны');
-const thirdSide = prompt('Ведите длину третьей стороны');
-if (firstSide + secondSide > thirdSide && firstSide + thirdSide > secondSide && secondSide + thirdSide > firstSide){
-    alert('Отлично, треугольник получится!')
-}else{
-    alert('Попробуй еще раз, треугольник не получится')
-}
+// const firstSide = +prompt('Введите длину первой стороны');
+// const secondSide = +prompt('Введите длину второй стороны');
+// const thirdSide = +prompt('Ведите длину третьей стороны');
+// if (firstSide + secondSide > thirdSide && firstSide + thirdSide > secondSide && secondSide + thirdSide > firstSide){
+//     alert('Отлично, треугольник получится!')
+// }else{
+//     alert('Попробуй еще раз, треугольник не получится')
+// }
