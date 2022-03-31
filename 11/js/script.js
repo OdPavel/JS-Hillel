@@ -25,12 +25,28 @@
 
 let now = new Date();
 let yearOfBirth = +prompt('Привет, у меня есть к тебе несколько вопросов. Какой год твоего рождения?', 1985);
-let newYearOfBirth = (yearOfBirth) ? yearOfBirth : alert('Жаль, что ты не захотел ввести свой год рождения');
+(yearOfBirth) ? true : alert('Жаль, что ты не захотел ввести свой год рождения');
 let city = prompt('Отлично, подскажи, в каком городе ты живешь?', 'Odessa');
-let newCity = (city) ? city : alert('Жаль, что ты не захотел ввести свой город');
+(city) ? true : alert('Жаль, что ты не захотел ввести свой город');
 let sport = prompt('И последний вопрос, какой твой любимый вид спорта?', 'boxing');
-let newSport = (sport) ? sport : alert('Жаль, что ты не захотел ввести свой любимый вид спорта');
+(sport) ? true : alert('Жаль, что ты не захотел ввести свой любимый вид спорта');
 
-if(newCity == 'Киев' || newCity == 'Лондон' || newCity == 'Париж' && newSport == 'бокс' || newSport == 'футбол' || newSport == 'бокс') {
-    alert(now.getFullYear() - yearOfBirth)
+let userYears = now.getFullYear() - yearOfBirth;
+
+if(city === 'Киев' && sport === 'бокс') {
+    alert(`Тебе ${userYears} лет, ты живешь в столице Украины, ты хочешь стать боксером как Кличко`);
+}else if (city === 'Лондон'){
+    let capitalEngland = 'Англии';
+}else if (city === 'Париж'){
+    let capitalFrance = 'Франции';
+    console.log(capitalFrance)
 }
+if (sport === 'бокс') {
+    let championBox = 'Кличко'
+}else if (sport === 'футбол'){
+    let championFootball = 'Шевченко'
+}else if (sport === 'прыжки'){
+    let championJump = 'Бубка'
+}
+console.log(city)
+// // alert(`Тебе ${}`)
