@@ -35,7 +35,9 @@ if (city === 'Киев' || city === 'киев' && sport === 'бокс' || sport 
 } else if (city === 'Лондон' || city === 'лондон' && sport === 'бокс' || sport === 'Бокс'){
     alert(`Тебе ${userYears} лет, ты живешь в ${capitalEngland}, и ты хочешь быть как ${championBox}`);
 }else if (city === 'Париж' || city === 'париж' && sport === 'бокс' || sport === 'Бокс'){
-    alert(`Тебе ${userYears} лет, ты живешь в ${capitalFrance}, и ты хочешь быть как ${championBox}`);
+        alert(`Тебе ${userYears} лет, ты живешь в ${capitalFrance}, и ты хочешь быть как ${championBox}`);
+}else if (city && sport === 'бокс' || sport === 'Бокс'){
+    alert(`Тебе ${userYears} лет, ты живешь в ${city}, и ты хочешь быть как ${championBox}`);
 }else if (city === 'Киев' || city === 'киев' && sport === 'футбол' || sport === 'Футбол'){
     alert(`Тебе ${userYears} лет, ты живешь в ${capitalUkraine}, и ты хочешь быть как ${championFootball}`);
 }else if (city === 'Лондон' || city === 'лондон' && sport === 'футбол' || sport === 'Футбол'){
