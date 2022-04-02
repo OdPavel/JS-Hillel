@@ -52,7 +52,7 @@ if (city === 'Киев' || city === 'киев' && sport === 'бокс' || sport 
     alert('Вы ввели не верную информацию, попробуйте еще раз');
 }else if(sport === null || sport === '' ){
     alert('Вы ввели не верную информацию, попробуйте еще раз');
-}else if(userYears === null || userYears === '' || yearOfBirth === isNaN(NaN)){
+}else if(userYears === null || userYears === '' || yearOfBirth === isNaN(yearOfBirth)){
     alert('Вы ввели не верную информацию, попробуйте еще раз');
 }else{
     alert(`Тебе ${userYears} лет, ты живешь в ${city}, и твое хобби ${sport}`);
