@@ -8,5 +8,6 @@ for (let i = 2; i < simpleNum; i++){
         break
     }else{
         console.log(true)
+        break
     }
 }
