@@ -1,13 +1,17 @@
 'use strict'
 
-const simpleNum = +prompt('Введите любое число',);
+let simpleNum = prompt('Введите любое число');
+let num = true;
 
-for (let i = 2; i < simpleNum; i++){
-    if(simpleNum % i === 0){
-        console.log(false)
-        break
-    }else{
-        console.log(true)
-        break
+if (simpleNum == 1){
+    console.log(false)
+}else {
+    for (let i = 2; i < simpleNum; i++) {
+        if (simpleNum % i === 0) {
+      num = false;
+            break
+        }
     }
+    console.log(num)
 }
+
