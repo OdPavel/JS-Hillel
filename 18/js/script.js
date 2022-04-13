@@ -14,7 +14,7 @@ function myArr(a) {
     }
     if (exampleArr.length > 0) {
         // console.log(true)
-        return;
+        return exampleArr;
     } else {
         // console.log(false)
         return null;
