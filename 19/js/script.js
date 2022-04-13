@@ -14,30 +14,33 @@ function mainFunction(callback) {
 }
 
 function exponentiation(num, num2) {
-    result = Math.pow(num, num2);
-    return
+    return result = Math.pow(num, num2);
 }
 
 function multiplay(num, num2) {
-    result = num * num2;
-    return
+    return result = num * num2;
 }
 
 function division(num, num2) {
-    result = num / num2;
-    return
+    return result = num / num2;
 }
 
 function modulo(num, num2) {
-    result = num % num2;
-    return
+    return result = num % num2;
 }
 
-mainFunction(exponentiation);
-// mainFunction(multiplay);
+// mainFunction(exponentiation);
+mainFunction(multiplay);
 // mainFunction(division);
 // mainFunction(modulo);
 console.log(result);
+
+
+
+
+
+
+
 
 
 // let result = null;
