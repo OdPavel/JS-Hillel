@@ -52,11 +52,20 @@
 // }
 
 // #5
-const firstSide = +prompt('Введите длину первой стороны');
-const secondSide = +prompt('Введите длину второй стороны');
-const thirdSide = +prompt('Ведите длину третьей стороны');
-if (firstSide + secondSide > thirdSide && firstSide + thirdSide > secondSide && secondSide + thirdSide > firstSide){
-    alert('Отлично, треугольник получится!')
-}else{
-    alert('Попробуй еще раз, треугольник не получится')
-}
+// const firstSide = +prompt('Введите длину первой стороны');
+// const secondSide = +prompt('Введите длину второй стороны');
+// const thirdSide = +prompt('Ведите длину третьей стороны');
+// if (firstSide + secondSide > thirdSide && firstSide + thirdSide > secondSide && secondSide + thirdSide > firstSide){
+//     alert('Отлично, треугольник получится!')
+// }else{
+//     alert('Попробуй еще раз, треугольник не получится')
+// }
+
+// function century(year) {
+//     let a = Math.floor(year)
+//     return a;
+// }
+// console.log(century(1954));
+let a = Math.floor(54.2)
+
+console.log(a)

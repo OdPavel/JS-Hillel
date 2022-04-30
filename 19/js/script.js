@@ -5,7 +5,7 @@ let num = null;
 let num2 = null;
 
 function mainFunction(callback) {
-    do{
+    do {
         num = +prompt('Enter number');
         num2 = +prompt('Enter num2');
     }
@@ -34,13 +34,6 @@ mainFunction(multiplay);
 // mainFunction(division);
 // mainFunction(modulo);
 console.log(result);
-
-
-
-
-
-
-
 
 
 // let result = null;
