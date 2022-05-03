@@ -1,29 +1,37 @@
 'use strict'
 
-const arr = [1,2,3,4,5,6];
-
 
 //----method indexOf-------------
-function indexOf(array) {
+// const arr = [1, 2, 3, 4, 5, 6];
 
-    // let strArr = arr.join()
-    // let arr2 = strArr.split('');
-    // console.log(arr2)
-    for (let i = 0; i < arr.length; i++) {
-        if(typeof(arr[i]) === "N"){
-            return (true)
-        }else {
-            return (false)
-        }
+// function indexOf(array, searchElement, fromIndex = 0) {
+//     if (array.length <= fromIndex) {
+//         return -1
+//     }
+//     for (let i = fromIndex; i < array.length; i++) {
+//         if (array[i] === searchElement) {
+//             return i
+//         }
+//     }
+//     return -1
+// }
+// console.log(indexOf(arr, 3, ));
 
-    //     if (arr2[i] === '4') {
-    //         return [i];
-    //     }
-    }
-    // return -1
-}
-
-console.log(indexOf(arr))
 
 //-------method lastIndexOf------------
+const string = 'Hello world'
+
+function lastIndexOf(array, searchValue, fromIndex = array.length) {
+    let array2 = array.split('');
+    if (array2.length < fromIndex) {
+        return -1
+    }
+    for (let i = fromIndex; i > 0; i--) {
+        if (array2[i] === searchValue) {
+            return i
+        }
+    }
+    return -1
+}
+console.log(lastIndexOf(string, 'l', 1));
 
