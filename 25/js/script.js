@@ -10,5 +10,6 @@ function createSum() {
 }
 
 let begg = createSum();
+begg(3);
 begg(5);
-begg(10);
+begg(20);
