@@ -4,12 +4,12 @@ function createSum() {
     let s = 0;
 
     return function sum(n) {
-        s += n
-        console.log(s)
+        s += n;
+        return s;
     }
 }
 
 let begg = createSum();
-begg(3);
-begg(5);
-begg(20);
+console.log(begg(3));
+console.log(begg(5));
+console.log(begg(20));

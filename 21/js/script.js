@@ -52,20 +52,26 @@
 // console.log(arrayFill('Hello',3));
 
 // task#8
+// let arr = [1, 2, 4, 6, 3, 2, 3, 4];
+// let sumNumbers = 0;
+// let iteration = 0;
+// arr.forEach((item, index) => {
+//
+//     if (sumNumbers > 10) {
+//         return;
+//     }
+//
+//     sumNumbers += item;
+//     iteration = index + 1;
+//
+// })
+// console.log(iteration)
+
 let arr = [1, 2, 4, 6, 3, 2, 3, 4];
 let sumNumbers = 0;
-let iteration = 0;
-arr.forEach((item, index) => {
 
-    if (sumNumbers > 10) {
-        return;
-    }
 
-    sumNumbers += item;
-    iteration = index + 1;
 
-})
-console.log(iteration)
 
 
 // task#9
