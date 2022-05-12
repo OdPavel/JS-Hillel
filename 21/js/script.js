@@ -67,11 +67,17 @@
 // })
 // console.log(iteration)
 
-let arr = [1, 2, 4, 6, 3, 2, 3, 4];
-let sumNumbers = 0;
-
-
-
+// task#8(v2)
+// let arr = [1, 2, 4, 6, 3, 2, 3, 4];
+// const result = arr.reduce(
+//     function (accum, item) {
+//         if (accum < 10) {
+//             accum += item;
+//         }
+//         return item;
+//     }
+// );
+// console.log(result)
 
 
 // task#9
@@ -81,6 +87,14 @@ let sumNumbers = 0;
 //     arr2.push(arr[i]);
 // }
 // console.log(arr2);
+
+
+// task#9(v2)
+const arr = [1,2,3];
+let arr2 = arr.reverse();
+console.log(arr2)
+
+
 
 // task#10
 // const arr = [[1, 2, 3], [4, 5], [6]];
