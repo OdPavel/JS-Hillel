@@ -12,29 +12,39 @@ const makeCounter = () => {
         privateCounter += val;
     }
 
+    const increment = () => {
+        chargeBy(1);
+        statistic.increment += 1;
+    }
+
+    const decrement = () => {
+        chargeBy(-1);
+        statistic.decrement += 1;
+    }
+
+    const value = () => {
+        statistic.value += 1;
+        return privateCounter;
+    }
+
+    const getStatistic = () => {
+        return statistic
+    }
+
+    const resetStatistic = () => {
+        statistic = {
+            increment: 0,
+            decrement: 0,
+            value: 0
+        };
+    }
+
     return {
-        increment: function () {
-            chargeBy(1);
-            statistic.increment += 1;
-        },
-        decrement: function () {
-            chargeBy(-1);
-            statistic.decrement += 1;
-        },
-        value: function () {
-            statistic.value += 1;
-            return privateCounter;
-        },
-        getStatistic: function () {
-            return statistic
-        },
-        resetStatistic: function () {
-            statistic = {
-                increment: 0,
-                decrement: 0,
-                value: 0
-            };
-        }
+        increment,
+        decrement,
+        value,
+        getStatistic,
+        resetStatistic
     }
 };
 let Counter1 = makeCounter();
@@ -50,10 +60,6 @@ Counter1.resetStatistic();
 Counter1.increment();
 Counter1.increment();
 Counter1.decrement();
+Counter1.value();
 console.log(Counter1.getStatistic());
-
-// Counter2.increment();
-// console.log(Counter2.value());
-
-
 
