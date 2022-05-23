@@ -4,8 +4,7 @@
     let steps = 1;
 
     function palindrome(num) {
-        if (num < 0) return false;
-        if (num % 10 === 0) return false;
+        if (num < 0 || num % 10 === 0) return false;
         if (num < 10) return true
         let num2 = Number(num.toString().split('').reverse().join(''));
         let sum = num + num2;
@@ -33,5 +32,5 @@
         }
     }
 
-    console.log(palindrome(100));
+    console.log(palindrome(12));
 })();
