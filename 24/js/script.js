@@ -1,44 +1,37 @@
-'use strict'
+'use strict';
 
-function palindrome (num)  {
-    if (num < 0) return false;
-    // if (num % 10 === 0) return false;
-    // if (num < 10) return true
+(function () {
+    let steps = 1;
 
+    function palindrome(num) {
+        if (num < 0) return false;
+        if (num % 10 === 0) return false;
+        if (num < 10) return true
+        let num2 = Number(num.toString().split('').reverse().join(''));
+        let sum = num + num2;
+        const result = sum;
 
+        let rev = 0;
 
-    let result = 0;
-    while (num > result) {
-        result *= 10;
-        result += num % 10;
-        num = Math.trunc(num / 10);
+        while (sum > rev) {
+            rev *= 10;
+            rev += sum % 10;
+            sum = Math.trunc(sum / 10);
+        }
+
+        if (sum === rev || sum === Math.trunc(rev / 10)) {
+
+            return {
+                result,
+                steps,
+            }
+
+        } else {
+            steps++;
+            return palindrome(result)
+
+        }
     }
-    if (num === result || num === Math.trunc(result/10)) {
-        return 'Palindrome'
-    } else {
-        return palindrome(num)
-    }
 
-}
-
-
-
-
-console.log(palindrome(96))
-
-// const isPalindromeNumber = function (x) {
-//     if (x < 0) return false;
-//     if (x % 10 === 0) return false;
-//     if (x < 10) return true
-//
-//     let rev = 0;
-//     while (x > rev) {
-//         console.log(x, rev);
-//         rev *= 10;
-//         rev += x % 10;
-//         x = Math.trunc(x / 10);
-//     }
-//     console.log(x, rev);
-//     return x === rev || x === Math.trunc(rev / 10);
-// }
-
+    console.log(palindrome(100));
+})();
