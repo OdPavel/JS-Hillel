@@ -18,9 +18,11 @@
             }
 
             const dataString = JSON.stringify(data);
-            localStorage.setItem(formSelector, dataString)
+            localStorage.setItem(formSelector, dataString);
+            window.location.href = '../index1.html';
         }
         form.addEventListener('submit', submitHandler);
+
 
 
 
