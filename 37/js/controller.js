@@ -47,8 +47,12 @@ function controller(view, model, payLoad) {
     const statusTodoHandler = (e) => {
         e.stopPropagation();
         if (!e.target.classList.contains('options')) return;
-        console.log(e.target);
+        const todoId = +e.target.closest('[data-todo-id]').getAttribute('data-todo-id');
+
+        model.statusTodoHandler(todoId);
+        // console.log(e.target);
     }
+
 
     form.addEventListener('submit', submitHandler);
     window.addEventListener('DOMContentLoaded', loadHandler);

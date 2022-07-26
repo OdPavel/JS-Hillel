@@ -3,7 +3,7 @@
 function model() {
     return {
         dbName: null,
-        currentID: 1,
+        currentID: null,
         setDBName(key) {
             if (!key.trim()) throw new Error('its not possible');
             this.dbName = key;
@@ -15,7 +15,7 @@ function model() {
 
         setDate(data) {
             let response = null;
-            const todoData = structuredClone(data)
+            const todoData = structuredClone(data);
             const savedData = this.getData();
             const todoSave = savedData ? savedData : [];
 
@@ -47,6 +47,15 @@ function model() {
                 localStorage.removeItem(this.dbName)
             }
         },
+
+        statusTodoHandler(id) {
+            const data = this.getData();
+            if(!data.length) return;
+            const index = data.findIndex(todoIndex => todoIndex.id === id);
+            // const status = data.
+            console.log(index)
+        },
+
         init(dbKey) {
             this.setDBName(dbKey);
             const savedData = this.getData();
