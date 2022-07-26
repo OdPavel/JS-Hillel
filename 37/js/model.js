@@ -4,6 +4,7 @@ function model() {
     return {
         dbName: null,
         currentID: null,
+        status: 'active',
         setDBName(key) {
             if (!key.trim()) throw new Error('its not possible');
             this.dbName = key;
@@ -21,7 +22,7 @@ function model() {
 
             todoSave.push(todoData);
             todoData.id = this.currentID;
-
+            todoData.status = this.status;
             try {
                 localStorage.setItem(this.dbName, JSON.stringify(todoSave));
                 response = {
@@ -48,12 +49,13 @@ function model() {
             }
         },
 
-        statusTodoHandler(id) {
+        statusTodoHandler(status, id) {
             const data = this.getData();
-            if(!data.length) return;
+            // console.log(data)
+            if (!data.length) return;
             const index = data.findIndex(todoIndex => todoIndex.id === id);
-            // const status = data.
-            console.log(index)
+            data[index].status = status;
+            localStorage.setItem(this.dbName, JSON.stringify(data))
         },
 
         init(dbKey) {

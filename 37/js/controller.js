@@ -41,22 +41,23 @@ function controller(view, model, payLoad) {
         if (!event.target.classList.contains('remove')) return;
         const todoId = +event.target.closest('[data-todo-id]').getAttribute('data-todo-id');
         model.removeTodoItem(todoId);
+        // model.statusTodoHandler(todoId)
         view.removeTodoItem(todoId);
     }
 
     const statusTodoHandler = (e) => {
         e.stopPropagation();
         if (!e.target.classList.contains('options')) return;
+        const todoStatus = e.target.value;
         const todoId = +e.target.closest('[data-todo-id]').getAttribute('data-todo-id');
+        model.statusTodoHandler(todoStatus, todoId);
 
-        model.statusTodoHandler(todoId);
-        // console.log(e.target);
     }
 
 
     form.addEventListener('submit', submitHandler);
     window.addEventListener('DOMContentLoaded', loadHandler);
     todoContainer.addEventListener('click', removeTodoHandler);
-    todoContainer.addEventListener('click', statusTodoHandler);
+    todoContainer.addEventListener('change', statusTodoHandler);
 
 }
