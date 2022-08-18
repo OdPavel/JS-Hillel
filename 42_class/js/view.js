@@ -1,7 +1,8 @@
 'use strict';
 
-function view() {
-    const createAlbum = (data) => {
+export class View {
+
+    createAlbum = (data) => {
         const wrapperElement = document.createElement('div');
         wrapperElement.classList.add('col-3');
         wrapperElement.setAttribute('data-id', data.id);
@@ -13,37 +14,53 @@ function view() {
         return wrapperElement
 
     }
-    const createPhoto = (data) => {
+    createPhoto = (data) => {
         const wrapperElement = document.createElement('div');
         wrapperElement.classList.add('col-3');
         wrapperElement.innerHTML =
             `<div class="photoWrapper">
                 <div class="albumHeading border mb-3 p-3">${data.title}</div>
-                <img src='${data.url}' alt="picture from server" class="img mb-3">
+                <img src='${data.url}' alt="picture from server" class="img mb-3 w-100">
             </div>
             `
         return wrapperElement
-
     }
 
-    return {
-        album: null,
-        albumContainer: null,
-
-        renderAlbumItem(data) {
-            const itemTemplate = createAlbum(data);
-            this.albumContainer.append(itemTemplate);
-        },
-
-        renderPhoto(data){
-            const itemTemplate = createPhoto(data);
-            this.albumContainer.append(itemTemplate);
-    },
-
-        init(element, container) {
-            this.album = element;
-            this.albumContainer = container;
-        }
+    createBtn = (container) => {
+        const buttonBack = document.createElement('div');
+        buttonBack.classList.add('col-12');
+        buttonBack.innerHTML = `<button class="btn btn-danger text-uppercase d-block my-4 mx-auto px-5">back</button>`
+        container.append(buttonBack)
     }
+
+    renderTitleAlbum = (container) => {
+        const title = document.createElement('div');
+        title.innerHTML = `<h1 class="text-center mt-5 mb-5 text-uppercase text-info">albums</h1>`
+        container.append(title)
+    }
+    renderTitlePhoto = (container) => {
+        const title = document.createElement('div');
+        title.innerHTML = `<h1 class="text-center mt-5 mb-5 text-uppercase text-info">Photos</h1>`
+        container.append(title)
+    }
+
+    albumContainer = null
+
+    renderAlbumItem(data) {
+        const itemTemplate = this.createAlbum(data);
+        this.albumContainer.append(itemTemplate);
+    }
+
+    renderPhoto(data) {
+
+        const itemTemplate = this.createPhoto(data);
+        this.albumContainer.append(itemTemplate);
+    }
+
+    init(container) {
+        this.albumContainer = container;
+    }
+
 }
+
 

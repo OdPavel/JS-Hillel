@@ -1,0 +1,26 @@
+body{
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(80,138,207,1) 100%);
+}
+.taskWrapper {
+    border-radius: 10px;
+    box-shadow: 0 0 14px 1px rgba(0, 0, 0, .2);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.taskHeading {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.taskDescription {
+    font-size: 16px;
+
+}
+.row{
+    margin: 0 auto;
+}
+.img{
+    max-width: 300px;
+}

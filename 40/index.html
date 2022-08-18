@@ -10,48 +10,27 @@
 <body>
 
 <main>
-  <h1 class="text-center mt-5 mb-5">phone book</h1>
-  <div class="container">
-    <div class="row">
-      <div class="col-3">
-        <form id="todoForm">
-<!--          <div class="mb-3">-->
-<!--            <label class="form-label">Enter name</label>-->
-<!--            <input type="text" required name="name" class="form-control">-->
-<!--          </div>-->
-<!--          <div class="mb-3">-->
-<!--            <label class="form-label">Enter phone</label>-->
-<!--            <input type="tel" required name="number" class="form-control">-->
-<!--          </div>-->
-<!--          <div class="mb-3">-->
-<!--            <label class="form-label">Enter job title</label>-->
-<!--            <input type="text" required name="position" class="form-control">-->
-<!--          </div>-->
-          <button type="submit" class="btn btn-primary">Create contact!</button>
-        </form>
+  <section class="wrapper border mt-3 pb-3 mx-auto">
+    <h1 class="text-center mt-5 mb-5 text-uppercase">phone book</h1>
+    <form class="form__add" id="formAdd">
+      <div class="mb-3 ps-3 pe-3">
+        <label class="mb-2">Enter name</label>
+        <input type="text" required name="phoneName" id="phoneName" class="form-control">
       </div>
-
-
-      <div class="col-9">
-        <div class="row" id="todoItems">
-
-          <!--                    <div class="col-4">-->
-          <!--                        <div class="taskWrapper">-->
-          <!--                            <div class="taskHeading">Title</div>-->
-          <!--                            <div class="taskDescription">Task body</div>-->
-          <!--                        </div>-->
-          <!--                    </div>-->
-
-
-        </div>
-
+      <div class="mb-3 ps-3 pe-3">
+        <label class="mb-2">Enter phone</label>
+        <input type="number" required name="phoneNumber" id="phoneNumber" class="form-control ">
       </div>
-    </div>
-  </div>
+      <div class="mb-3 ps-3 pe-3">
+        <label class="mb-2">Enter description</label>
+        <input type="text" required name="phoneDescription" id="phoneDescription" class="form-control">
+      </div>
+      <button type="submit" class="bnt btn-secondary rounded d-block mx-auto px-4 py-1 mt-5">Create phone</button>
+    </form>
+  </section>
+
 </main>
-<script src="js/controller.js"></script>
-<script src="js/model.js"></script>
-<script src="js/view.js"></script>
-<script src="js/app.js"></script>
+
+<script type="module" src="js/app.js"></script>
 </body>
 </html>

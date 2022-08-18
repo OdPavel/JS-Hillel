@@ -23,6 +23,7 @@ function controller(view, model, payLoad) {
         event.preventDefault();
         event.stopPropagation();
         const inputs = document.querySelectorAll('input, textarea');
+        console.log(inputs)
         const data = model.setDate(fetchFormData(inputs));
 
         if (!data.success) throw new Error('Something went wrong while saving data');

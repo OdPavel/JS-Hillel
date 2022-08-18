@@ -1,14 +1,12 @@
 'use strict';
+import {Controller} from "./controller.js";
+import {Model} from "./model.js";
+import {View} from "./view.js";
 
 
-void function () {
+const app = new Controller(
+    new View(),
+    new Model(),
+);
+app.start()
 
-
-
-
-    const app = controller(
-        view(),
-        model(),
-    );
-    // app.start()
-}()
