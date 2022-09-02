@@ -1,4 +1,4 @@
-import {addContactSelector, addContactModalTitle, watchContact, addCartItems} from "./config.js";
+import {addContactSelector, addContactModalTitle, watchContact, addCartItems, modalWindow} from "./config.js";
 
 class Controller {
     #model = null;
@@ -67,27 +67,75 @@ class Controller {
         document.querySelector(addCartItems)
             .addEventListener('click', this.watchInfo);
 
+        document.querySelector(addCartItems)
+            .addEventListener('click', this.correctCard);
+
+        document.querySelector(addCartItems)
+            .addEventListener('click', this.removeContactHandler);
+
+
+    }
+
+    searchId(e){
+        return +e.target.closest('[data-card-id]').getAttribute('data-card-id')
     }
 
     watchInfo = (e) => {
         e.stopPropagation();
         if (!e.target.classList.contains('bi-eye')) return;
+        const cardId = this.searchId(e);
+        const getData = this.#model.getData();
+        const objFromArr = getData.find(todoIndex => todoIndex.id === cardId);
+        const showContactInfo = this.#view.createWatchingInfo(objFromArr);
+        this.#view.modalHeader = watchContact;
+        this.#view.modalBody = showContactInfo;
 
-        const cardId = +e.target.closest('[data-card-id]').getAttribute('data-card-id');
+        this.#view.openModal()
+        showContactInfo.addEventListener('click', this.closeInfo)
+
+    }
+
+    closeInfo = (e) => {
+        e.stopPropagation();
+        const {target} = e;
+        if (!e.target.classList.contains('btn-close-info')) return;
+        this.#view.closeModal();
+        setTimeout(() => {
+            this.#view.modalHeader = '';
+            this.#view.clearModalBody();
+        }, 150);
+        target.removeEventListener('click', this.watchInfo)
+    }
+
+    correctCard = (e) => {
+        e.stopPropagation();
+        if (!e.target.classList.contains('bi-pen')) return;
+        const cardId = this.searchId(e);
         const getData = this.#model.getData();
         const objFromArr = getData.find(todoIndex => todoIndex.id === cardId);
 
-        const addContactForm = this.#view.createAddContactForm();
+        const addContactForm = this.#view.createAddContactForm(objFromArr);
         this.#view.modalHeader = watchContact;
 
-        getData.forEach((input) => {
-            this.#view.createAddContactForm[input.value] = input.name
-        });
-
         this.#view.modalBody = addContactForm;
-        this.#view.openModal()
+        this.#view.openModal();
+
+        addContactForm.addEventListener('submit', this.#addContactFormHandler);
+
+        // getData.push(objFromArr)
 
 
+        // localStorage.setItem(addContactSelector, JSON.stringify(getData))
+
+
+    }
+
+    removeContactHandler = (e) => {
+        e.stopPropagation();
+        if (!e.target.classList.contains('bi-x')) return;
+        const cardId = this.searchId(e);
+        this.#model.removeContact(cardId);
+        this.#view.removeCard(cardId)
     }
 
     set model(ModelClass) {

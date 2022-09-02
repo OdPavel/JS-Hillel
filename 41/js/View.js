@@ -26,26 +26,49 @@ class View {
         this.#modalHeader.innerHTML = value;
     }
 
-    createAddContactForm() {
+    createAddContactForm(data = null) {
         const form = document.createElement('form');
         form.innerHTML =
             `<div class="mb-3">
               <label for="contact-name" class="form-label">Contact Name</label>
-              <input name="name" type="text" class="form-control" id="contact-name" placeholder="John Doe">
+              <input name="name" type="text" class="form-control" id="contact-name" value="${data ? data.name : ''}" placeholder="John Doe">              
             </div>
             <div class="mb-3">
               <label for="phone-number" class="form-label">Phone number</label>
-              <input name="phoneNumber" class="form-control" type="tel" id="phone-number" placeholder="012 345 67 89">
+              <input name="phoneNumber" class="form-control" type="tel" id="phone-number" value="${data ? data.phoneNumber : ''}" placeholder="012 345 67 89" >
             </div>
             <div class="mb-3">
               <label for="position" class="form-label">Position</label>
-              <input name="position" class="form-control" type="text" id="position" placeholder="Developer">
+              <input name="position" class="form-control" type="text" id="position" value="${data ? data.position : ''}" placeholder="Developer">
             </div>
             <div>
-            <button class="btn btn-success" type="submit">Add contact</button>
-            <button class="btn btn-danger" type="reset">Reset form</button>
-</div>
-`
+                <button class="btn btn-success" type="submit">Add contact</button>
+                <button class="btn btn-danger" type="reset">Reset form</button>     
+            </div>
+            `
+
+        return form;
+    }
+
+    createWatchingInfo(data = null) {
+        const form = document.createElement('form');
+        form.innerHTML =
+            `<div class="mb-3">
+              <label for="contact-name" class="form-label">Contact Name</label>
+              <input class="form-control" value="${data ? data.name : ''}"disabled>              
+            </div>
+            <div class="mb-3">
+              <label for="phone-number" class="form-label">Phone number</label>
+              <input class="form-control" value="${data ? data.phoneNumber : ''}" disabled>
+            </div>
+            <div class="mb-3">
+              <label for="position" class="form-label">Position</label>
+              <input class="form-control" value="${data ? data.position : ''}" disabled>
+            </div>
+            <div>
+                <button class="btn btn-success btn-close-info" type="button">OK</button>   
+            </div>
+            `
 
         return form;
     }
@@ -72,11 +95,11 @@ class View {
         this.#modalBody.append(value);
     }
 
-    clearModalBody () {
+    clearModalBody() {
         this.#modalBody.innerHTML = '';
     }
 
-    createCard(data){
+    createCard(data) {
         const card = document.createElement('div');
         card.classList.add('card');
         card.classList.add('mb-2');
@@ -93,15 +116,22 @@ class View {
               <button class="btn btn-success btn-sm">
                 <i class="bi bi-telephone"></i>
               </button>
+              <button class="btn btn-danger btn-sm">
+                <i class="bi bi-x"></i>
+              </button>
             </div>
           </div>`
         return card
     }
 
-    renderCard(data){
+    renderCard(data) {
         const itemTemplate = this.createCard(data);
         const addCart = document.querySelector(addCartItems);
         addCart.append(itemTemplate)
+    }
+
+    removeCard(id){
+        document.querySelector(`[data-card-id = "${id}"]`).remove();
     }
 
 }

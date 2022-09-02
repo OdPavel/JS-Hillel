@@ -11,7 +11,11 @@ class Model {
         let response = null;
         const todoData = structuredClone(data);
         const savedData = this.getData();
+        // if(savedData.includes(data.id)){
+        //     savedData.filter(todoItem => todoItem.id !== data.id);
+        // }
         this.currentId = savedData ? savedData[savedData.length - 1].id + 1 : 1;
+
         const dataToSave = savedData ? savedData : [];
 
         dataToSave.push(todoData);
@@ -31,6 +35,16 @@ class Model {
             }
         }
         return response;
+    }
+
+    removeContact(id) {
+        const data = this.getData();
+        const updatedData = data.filter(todoItem => todoItem.id !== id);
+        if (updatedData.length) {
+            localStorage.setItem(addContactSelector, JSON.stringify(updatedData))
+        } else {
+            localStorage.removeItem(addContactSelector)
+        }
     }
 }
 
