@@ -12,12 +12,12 @@ class Table extends React.Component {
         return (
             <div>
                 <dl >
-                    {Object.keys(this.props['data']).map((item) => {
+                    {Object.keys(this.props.data).map((item) => {
 
                         return(
                             <div style={{display: 'flex'}}>
                                 <dt key={item.id}>{item}</dt>
-                                <dt key={item.id}>{this.props['data'][item]}</dt>
+                                <dt key={item.id}>{this.props.data[item]}</dt>
                             </div>
                         )
                     })}

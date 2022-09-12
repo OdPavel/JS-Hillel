@@ -4,13 +4,11 @@ import classNames from "classnames";
 class Button extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {switchOn: true, disabled: false}
+        this.state = {switchOn: false, disabled: false}
     }
     left = () =>{
         this.setState({switchOn: false});
-        this.setState({disabled: false});
-
-
+        this.setState({disabled: true});
     };
     right = () =>{
         this.setState({switchOn: true});
@@ -19,20 +17,17 @@ class Button extends React.Component{
 
     render() {
         const buttonClassLeft = classNames([
-            'btn ',
-            this.state.switchOn ?'btn-secondary' : 'btn-primary',
-            this.state.disabled ? {} : {disabled:true}
+            'btn btn-primary',
+            this.state.disabled && this.state.switchOn ? 'disabled' : ''
         ]) ;
         const buttonClassRight = classNames([
-            'btn ',
-            this.state.switchOn ?
-                'btn-primary': 'btn-secondary',
-            this.state.disabled ? {disabled:true} : {}
+            'btn btn-primary',
+            this.state.disabled && !this.state.switchOn? 'disabled' : ''
         ]) ;
 
         return<div>
             <div className="btn-group " role="group">
-                <button type="button" className={buttonClassLeft} onClick={this.left}>Left</button>
+                <button type="button" className={buttonClassLeft} onClick={this.left} >Left</button>
                 <button type="button" className={buttonClassRight} onClick={this.right}>Right</button>
             </div>
         </div>
