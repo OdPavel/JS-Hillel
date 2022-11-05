@@ -1,0 +1,14 @@
+.headerNav{
+
+}
+
+.headerNav a{
+    color: white;
+    font-size: 25px;
+    margin-right: 35px;
+ }
+
+.active {
+    color: lightyellow;
+    text-decoration: none;
+}

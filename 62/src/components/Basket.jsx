@@ -9,6 +9,7 @@ import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined
 
 
 export const Basket = (props) => {
+
     const {
         cartOpen,
         closeCart = Function.prototype,
@@ -16,9 +17,7 @@ export const Basket = (props) => {
         removeFromOrder,
         items,
         deleteCart,
-    }
-        = props
-
+    } = props
 
     return (
         <Drawer

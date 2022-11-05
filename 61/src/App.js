@@ -4,25 +4,41 @@ import {Catalog} from "./components/Catalog";
 import {Container} from "@mui/material";
 import Header from "./components/Header";
 import {useState} from "react";
+import {ProductsList} from "./components/ProductsList";
 
 function App() {
     const [isCartOpen, setIsCartOpen] = useState(false)
-  return (
-    <div className="App">
+    const [cartItems, setCartItems] = useState([])
+
+    const deleteCart =(id)=>{
+        setCartItems((prev)=> prev.filter((cart)=>cart.id !== id))
+    }
+
+
+    return (
+        <div className="App">
 
             <Header
-            handleCart={()=>setIsCartOpen(true)}
+                handleCart={() => setIsCartOpen(true)}
             />
-        <Container>
-            <Catalog/>
+            <Container>
+                <Catalog
+                    setCartItems={setCartItems}
 
-        </Container>
-        <Basket cartOpen={isCartOpen}
+                />
+
+            </Container>
+
+            <Basket
+
+                cartOpen={isCartOpen}
                 closeCart={() => setIsCartOpen(false)}
-        />
+                items={cartItems}
+                deleteCart={deleteCart}
+            />
 
-    </div>
-  );
+        </div>
+    );
 }
 
 export default App;

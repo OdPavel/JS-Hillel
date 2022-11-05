@@ -11,6 +11,8 @@ import Grid from '@mui/material/Grid';
 import {styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import {Stack, Rating } from "@mui/material";
+import {Link} from "react-router-dom";
+
 
 
 export function ProductsListItem(props) {
@@ -27,13 +29,17 @@ export function ProductsListItem(props) {
         rating,
 
     } = props.products
-    const {onPlus} = props
+    const {onPlus, onSee} = props
 
     const [isAdded, setIsAdded] = useState(false)
 
     const onClickPlus = () => {
         onPlus()
         setIsAdded(!isAdded)
+    }
+
+    const onClickCart = ()=>{
+        onSee()
     }
 
     return (
@@ -48,14 +54,15 @@ export function ProductsListItem(props) {
                 display: "flex",
                 flexDirection: "column",
             }}>
-                <a className='' href="https://google.com">
+                <Link className='' to='cart'
+                      onClick={onClickCart}>
                     <CardMedia
                         component="img"
                         height="140"
                         image={photo}
                         alt={title}
                     />
-                </a>
+                </Link>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                         {title}

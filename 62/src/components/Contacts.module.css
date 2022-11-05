@@ -1,0 +1,15 @@
+
+.contacts{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contacts h2{
+ color: #0c63e4;
+    margin-bottom: 35px;
+}
+
+.contacts h3{
+    color: #0dcaf0;
+    margin-bottom: 20px;
+}

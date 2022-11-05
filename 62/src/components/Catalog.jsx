@@ -1,4 +1,5 @@
 import React from "react";
+import styles from './Catalog.module.css'
 import PropTypes from 'prop-types';
 import {Filters} from './Filters';
 import {queryState} from "./query-state";
@@ -149,10 +150,12 @@ export class Catalog extends React.PureComponent {
             })
         }
 
-
+        const seeToCart = (obj)=>{
+            setCart( [obj] )
+        }
 
         return (
-            <div className="">
+            <div className={styles.container}>
                 <div>
                     {isLoading && (
                         <div>Loading...</div>
@@ -185,6 +188,7 @@ export class Catalog extends React.PureComponent {
                                             key={products.id}
                                             products={products}
                                             onPlus={() => onAddToCard(products)}
+                                            onSee={()=>seeToCart(products)}
                                         />
                                     ))}
                                 </Grid>
